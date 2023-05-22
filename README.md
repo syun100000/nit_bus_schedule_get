@@ -17,7 +17,7 @@
 1. このリポジトリをクローンします:
 
    ```
-   git clone https://github.com/your/repository.git
+   git clone　https://github.com/syun100000/nit_bus_schedule_get.git
    ```
 
 2. 必要なパッケージをインストールします:
