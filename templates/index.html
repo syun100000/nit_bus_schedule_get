@@ -10,6 +10,9 @@
         p{
             font-size: 40px;
         }
+        .next_next{
+            font-size: 30px;
+        }
     </style>
 </head>
 <body>
@@ -26,6 +29,7 @@
                         <div class="mdl-card__supporting-text">
                             <h4>新白岡駅→大学</h4>
                             <p>次のバス: {{ next_bus_JR_S }}</p>
+                            <p class="next_next">次々のバス: {{ next_next_bus_JR_S }}</p>
                         </div>
                     </div>
                 </section>
@@ -35,6 +39,7 @@
                         <div class="mdl-card__supporting-text">
                             <h4>大学→新白岡駅</h4>
                             <p>次のバス: {{ next_bus_JR_C }}</p>
+                            <p class="next_next">次々のバス: {{ next_next_bus_JR_C }}</p>
                         </div>
                     </div>
                 </section>
@@ -44,6 +49,7 @@
                         <div class="mdl-card__supporting-text">
                             <h4>東武動物公園駅→大学</h4>
                             <p>次のバス: {{ next_bus_TOBU_S }}</p>
+                            <p class="next_next">次々のバス: {{ next_next_bus_TOBU_S }}</p>
                         </div>
                     </div>
                 </section>
@@ -53,6 +59,7 @@
                         <div class="mdl-card__supporting-text">
                             <h4>大学→東武動物公園駅</h4>
                             <p>次のバス: {{ next_bus_TOBU_C }}</p>
+                            <p class="next_next">次々のバス: {{ next_next_bus_TOBU_C }}</p>
                         </div>
                     </div>
                 </section>

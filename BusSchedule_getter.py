@@ -44,6 +44,14 @@ class BUS_GET:
             if bus_time.time() > now:
                 return bus_time.strftime('%H:%M')
         return '本日の運行は終了しました。'
-    
+
+    def next_next_bus(self):
+        now = datetime.now(self.timezone).time()  # We only care about the time
+        bus_times_after_now = [bus_time for bus_time in self.bus_schedule_list if bus_time.time() > now]
+        
+        if len(bus_times_after_now) > 1:
+            return bus_times_after_now[1].strftime('%H:%M')
+        return '本日の運行は終了しました。'
+ 
 
 

@@ -4,6 +4,8 @@ from bs4 import BeautifulSoup
 from BusSchedule_getter import BUS_GET
 from datetime import datetime
 
+__version__ = '0.0.1'
+
 app = Flask(__name__)
 nowtime=datetime.now()
 print(nowtime)
@@ -18,13 +20,22 @@ def home():
     next_bus_JR_C = bus_schedule_JR_C.next_bus()
     next_bus_TOBU_S = bus_schedule_TOBU_S.next_bus()
     next_bus_TOBU_C = bus_schedule_TOBU_C.next_bus()
+
+    next_next_bus_JR_S = bus_schedule_JR_S.next_next_bus()
+    next_next_bus_JR_C = bus_schedule_JR_C.next_next_bus()
+    next_next_bus_TOBU_S = bus_schedule_TOBU_S.next_next_bus()
+    next_next_bus_TOBU_C = bus_schedule_TOBU_C.next_next_bus()
     
 
     return render_template('index.html', 
                            next_bus_JR_S=next_bus_JR_S, 
                            next_bus_JR_C=next_bus_JR_C,
                            next_bus_TOBU_S=next_bus_TOBU_S, 
-                           next_bus_TOBU_C=next_bus_TOBU_C,)
+                           next_bus_TOBU_C=next_bus_TOBU_C,
+                           next_next_bus_JR_S=next_next_bus_JR_S,
+                           next_next_bus_JR_C=next_next_bus_JR_C,
+                           next_next_bus_TOBU_S=next_next_bus_TOBU_S,
+                           next_next_bus_TOBU_C=next_next_bus_TOBU_C,)
 
 if __name__ == '__main__':
     app.run(debug=True)
