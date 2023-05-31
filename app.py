@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 from BusSchedule_getter import BUS_GET
 from datetime import datetime
 
-__version__ = '0.0.1'
+__version__ = '0.1.0'
 
 app = Flask(__name__)
 nowtime=datetime.now()
@@ -25,6 +25,7 @@ def home():
     next_next_bus_JR_C = bus_schedule_JR_C.next_next_bus()
     next_next_bus_TOBU_S = bus_schedule_TOBU_S.next_next_bus()
     next_next_bus_TOBU_C = bus_schedule_TOBU_C.next_next_bus()
+    
     
 
     return render_template('index.html', 

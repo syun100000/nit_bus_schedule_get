@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>NIT Bus Schedule</title>
+    <head>
+        <title>NIT Bus Schedule</title>
+    <!-- Material Design Lite JS -->
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <!-- Material Design Lite -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        p{
-            font-size: 40px;
-        }
-        .next_next{
-            font-size: 30px;
-        }
-    </style>
+    <!-- javascript読み込み -->
+    <script src="{{url_for('static', filename='js/countdownTimer.js')}}"></script>
+    <!-- css読み込み -->
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
 </head>
 <body>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
@@ -28,7 +26,7 @@
                     <div class="mdl-card mdl-cell mdl-cell--12-col">
                         <div class="mdl-card__supporting-text">
                             <h4>新白岡駅→大学</h4>
-                            <p>次のバス: {{ next_bus_JR_S }}</p>
+                            <p>次のバス: {{ next_bus_JR_S }}<span id="next_bus_JR_S_countdown"></span></p>
                             <p class="next_next">次々のバス: {{ next_next_bus_JR_S }}</p>
                         </div>
                     </div>
@@ -38,7 +36,7 @@
                     <div class="mdl-card mdl-cell mdl-cell--12-col">
                         <div class="mdl-card__supporting-text">
                             <h4>大学→新白岡駅</h4>
-                            <p>次のバス: {{ next_bus_JR_C }}</p>
+                            <p>次のバス: {{ next_bus_JR_C }} <span id="next_bus_JR_C_countdown"></span></p>
                             <p class="next_next">次々のバス: {{ next_next_bus_JR_C }}</p>
                         </div>
                     </div>
@@ -48,7 +46,7 @@
                     <div class="mdl-card mdl-cell mdl-cell--12-col">
                         <div class="mdl-card__supporting-text">
                             <h4>東武動物公園駅→大学</h4>
-                            <p>次のバス: {{ next_bus_TOBU_S }}</p>
+                            <p>次のバス: {{ next_bus_TOBU_S }} <span id="next_bus_TOBU_S_countdown"></span></p>
                             <p class="next_next">次々のバス: {{ next_next_bus_TOBU_S }}</p>
                         </div>
                     </div>
@@ -58,7 +56,7 @@
                     <div class="mdl-card mdl-cell mdl-cell--12-col">
                         <div class="mdl-card__supporting-text">
                             <h4>大学→東武動物公園駅</h4>
-                            <p>次のバス: {{ next_bus_TOBU_C }}</p>
+                            <p>次のバス: {{ next_bus_TOBU_C }} <span id="next_bus_TOBU_C_countdown"></span></p>
                             <p class="next_next">次々のバス: {{ next_next_bus_TOBU_C }}</p>
                         </div>
                     </div>
@@ -67,8 +65,12 @@
         </main>
     </div>
 
-    <!-- Material Design Lite JS -->
-    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     
 </body>
+<script>
+    countdownTimer("{{ next_bus_JR_S }}", "next_bus_JR_S_countdown");
+    countdownTimer("{{ next_bus_JR_C }}", "next_bus_JR_C_countdown");
+    countdownTimer("{{ next_bus_TOBU_S }}", "next_bus_TOBU_S_countdown");
+    countdownTimer("{{ next_bus_TOBU_C }}", "next_bus_TOBU_C_countdown");
+</script>
 </html>
