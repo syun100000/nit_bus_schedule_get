@@ -4,3 +4,14 @@ p{
 .next_next{
     font-size: 30px;
 }
+
+/* もし横幅が1000px以下ならば */
+@media screen and (max-width: 1000px) {
+    /* Path: static/css/style.css */
+    p{
+        font-size: 30px;
+    }
+    .next_next{
+        font-size: 20px;
+    }
+}
