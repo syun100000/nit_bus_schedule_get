@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 from BusSchedule_getter import BUS_GET
 from datetime import datetime
 
-__version__ = '0.1.1'
+__version__ = '0.1.2'
 
 app = Flask(__name__)
 nowtime=datetime.now()

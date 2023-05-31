@@ -22,13 +22,14 @@ function countdownTimer(time, id) {
     var countTime = mesget(time);
   
     var dms = countTime - nowTime;
-    var m = Math.floor(dms / 1000 / 60);
+    var h = Math.floor(dms / 1000 / 60 / 60);
+    var m = Math.floor((dms / 1000 / 60) % 60);
     var s = Math.floor((dms / 1000) % 60);
   
     var timer = document.getElementById(id);
   
     if (dms > 3600000) {
-        timer.innerHTML = "発車まで: 1時間以上";
+        timer.innerHTML = "発車まで: " + h + "時間" + m + "分" + s + "秒";
         setTimeout(() => countdownTimer(time, id), 1000);
     } else if (dms > 0) {
         timer.innerHTML = "発車まで: " + m + "分" + s + "秒";

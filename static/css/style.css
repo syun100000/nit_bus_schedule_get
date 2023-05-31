@@ -4,6 +4,11 @@ p{
 .next_next{
     font-size: 30px;
 }
+.mdl-card__supporting-text{
+    /* 上下のpaddingを0にする */
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
 
 /* もし横幅が1000px以下ならば */
 @media screen and (max-width: 1000px) {
@@ -13,5 +18,10 @@ p{
     }
     .next_next{
         font-size: 20px;
+    }
+    .mdl-card__supporting-text{
+        /* 上下のpaddingを0にする */
+        padding-top: 0px;
+        padding-bottom: 0px;
     }
 }
