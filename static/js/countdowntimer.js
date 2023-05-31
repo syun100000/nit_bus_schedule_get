@@ -31,12 +31,9 @@ function countdownTimer(time, id) {
     if (dms > 3600000) {
         timer.innerHTML = "発車まで: " + h + "時間" + m + "分" + s + "秒";
         setTimeout(() => countdownTimer(time, id), 1000);
-    } else if (dms >= 0) {
+    } else if (dms > 0) {
         timer.innerHTML = "発車まで: " + m + "分" + s + "秒";
         setTimeout(() => countdownTimer(time, id), 1000);
-        if dms==0{
-          location.reload();
-          }
     } else {
         timer.innerHTML = "";
     }
